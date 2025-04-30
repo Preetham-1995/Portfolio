@@ -1,0 +1,99 @@
+/* Existing styles remain unchanged */
+/* ... existing code ... */
+
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+    /* Header and Navigation */
+    .logo {
+        font-size: 1.2em;
+        padding: 10px;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: -100%;
+        background: rgba(0, 0, 0, 0.9);
+        transition: 0.3s;
+    }
+
+    nav.active ul {
+        left: 0;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    /* Home Layout */
+    .home-layout {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .photo-section {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .photo-container {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+    }
+
+    .info-section {
+        width: 100%;
+        padding: 0;
+        text-align: center;
+    }
+
+    .who-am-i {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+
+    .my-name {
+        font-size: 1.8em;
+    }
+
+    .description-container {
+        padding: 15px;
+    }
+
+    .description-container p {
+        font-size: 0.9em;
+        line-height: 1.6;
+    }
+}
+
+/* Small Mobile Devices */
+@media screen and (max-width: 480px) {
+    .logo {
+        font-size: 1em;
+    }
+
+    .photo-container {
+        width: 150px;
+        height: 150px;
+    }
+
+    .who-am-i {
+        font-size: 1.2em;
+    }
+
+    .my-name {
+        font-size: 1.5em;
+    }
+
+    .description-container {
+        padding: 10px;
+    }
+}

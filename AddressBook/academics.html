@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#4B0082">
+    <title>Academics - Sai Preetham Reddy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-animation"></div>
+    <header>
+        <div class="logo"><a href="./index.html">SAI PREETHAM REDDY PENNABADI</a></div>
+        <div class="hamburger" aria-label="Menu">
+            <span class="line1"></span>
+            <span class="line2"></span>
+            <span class="line3"></span>
+        </div>
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./academics.html" aria-current="page">Academics</a></li>
+                <li><a href="./technical-skills.html">Technical Skills</a></li>
+                <li><a href="./internships.html">Internships</a></li>
+                <li><a href="./projects.html">Projects</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="academics" class="content-section">
+            <div class="academics-container">
+                <div class="academics-content">
+                    <div class="education-item">
+                        <h3>Bachelor of Technology (B.Tech)</h3>
+                        <h4>Electronics and Communication Engineering</h4>
+                        <p class="grade">CGPA: 9.16</p>
+                        <p class="institution">Annamacharya Institute of Technology and Sciences</p>
+                        <p class="location">Rajampet, Andhra Pradesh, India - 516126</p>
+                    </div>
+
+                    <div class="education-item">
+                        <h3>Diploma</h3>
+                        <h4>Electronics and Communication Engineering</h4>
+                        <p class="grade">Percentage: 90%</p>
+                        <p class="institution">Government Polytechnic College</p>
+                        <p class="location">Anantapur, Andhra Pradesh, India - 515002</p>
+                    </div>
+
+                    <div class="education-item">
+                        <h3>SSC (10th Standard)</h3>
+                        <h4>Secondary School Education</h4>
+                        <p class="grade">CGPA: 10.0</p>
+                        <p class="institution">Sree Valmeeki High School</p>
+                        <p class="location">Kadiri, Andhra Pradesh, India - 515591</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p class="copyright">© 2024 Sai Preetham Reddy Pennabadi. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const nav = document.querySelector('nav');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            nav.classList.toggle('active');
+        });
+
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                nav.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

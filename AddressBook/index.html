@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Sai Preetham Reddy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-animation"></div>
+    <header>
+        <div class="logo"><a href="./index.html">SAI PREETHAM REDDY PENNABADI</a></div>
+        <div class="hamburger" aria-label="Menu">
+            <span class="line1"></span>
+            <span class="line2"></span>
+            <span class="line3"></span>
+        </div>
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="./index.html" aria-current="page">Home</a></li>
+                <li><a href="./academics.html">Academics</a></li>
+                <li><a href="./technical-skills.html">Technical Skills</a></li>
+                <li><a href="./internships.html">Internships</a></li>
+                <li><a href="./projects.html">Projects</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="content-section">
+            <div class="home-layout">
+                <div class="photo-section">
+                    <div class="photo-container">
+                        <img src="My image.jpg" alt="Sai Preetham Reddy">
+                    </div>
+                </div>
+                <div class="info-section">
+                    <h2 class="who-am-i">WHO AM I?</h2>
+                    <div class="name-section">
+                        <h1 class="my-name"><a href="./index.html">SAI PREETHAM REDDY</a></h1>
+                    </div>
+                    <div class="description-container">
+                        <p>
+                        Opportunities are being sought to apply technical skills and a passion for learning in a dynamic environment. A strong foundation in software development, cloud technologies, and emerging tools is possessed, with a desire to contribute to innovative projects while expanding expertise. A role that allows for professional growth, the taking on of meaningful challenges, and valuable contributions to the success of a forward-thinking team is being pursued.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p class="copyright">© 2024 Sai Preetham Reddy Pennabadi. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const nav = document.querySelector('nav');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            nav.classList.toggle('active');
+        });
+
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                nav.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#4B0082">
+
+    <title>Internships - Sai Preetham Reddy</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="background-animation"></div>
+
+    <header>
+
+        <div class="logo"><a href="./index.html">SAI PREETHAM REDDY PENNABADI</a></div>
+
+        <div class="hamburger" aria-label="Menu">
+
+            <span class="line1"></span>
+
+            <span class="line2"></span>
+
+            <span class="line3"></span>
+
+        </div>
+
+        <nav aria-label="Main navigation">
+
+            <ul>
+
+                <li><a href="./index.html">Home</a></li>
+
+                <li><a href="./academics.html">Academics</a></li>
+
+                <li><a href="./technical-skills.html">Technical Skills</a></li>
+
+                <li><a href="./internships.html" aria-current="page">Internships</a></li>
+
+                <li><a href="./projects.html">Projects</a></li>
+
+                <li><a href="./contact.html">Contact</a></li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <main>
+
+        <section id="internships" class="content-section">
+
+            <div class="internships-container">
+
+                <div class="internships-content">
+
+                    <div class="internship-item" id="palle-tech-internship">
+                        <div class="internship-info">
+                            <h3>Palle Technologies</h3>
+                            <h4>Java Full Stack Developer Trainee Engineer</h4>
+                        </div>
+                        <p class="duration">Jun 2024 – Dec 2024</p>
+                        <div class="view-certificate">Click to view certificate</div>
+                    </div>
+
+                    <div class="internship-item" id="technotran-internship">
+
+                        <div class="internship-info">
+
+                            <h3>Technotran, AICTE</h3>
+
+                            <h4>Embedded & IOT Intern</h4>
+
+                        </div>
+
+                        <p class="duration">Jan 2024 – Apr 2024</p>
+
+                        <div class="view-certificate">Click to view certificate</div>
+
+                    </div>
+
+
+
+                    <div class="internship-item" id="wipro-internship">
+
+                        <div class="internship-info">
+
+                            <h3>Wipro Limited</h3>
+
+                            <h4>Talentnext course Intern</h4>
+
+                        </div>
+
+                        <p class="duration">May 2023 – Sep 2023</p>
+
+                        <div class="view-certificate">Click to view certificate</div>
+
+                    </div>
+
+
+
+                    <div class="internship-item" id="indo-euro-internship">
+
+                        <div class="internship-info">
+
+                            <h3>Indo-Euro Synchronzation</h3>
+
+                            <h4>Intern</h4>
+
+                        </div>
+
+                        <p class="duration">Aug 2022 – Oct 2022</p>
+
+                        <div class="view-certificate">Click to view certificate</div>
+
+                    </div>
+
+
+
+                    <div class="internship-item" id="pvr-tech-internship">
+                        <div class="internship-info">
+                            <h3>PVR Tech Hub, Hyderabad</h3>
+                            <h4>Intern</h4>
+                        </div>
+                        <p class="duration">Jul 2022 – Aug 2022</p>
+                        <div class="view-certificate">Click to view certificate</div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Certificate Modals -->
+    <div id="palle-tech-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <img src="Palle_Technologies.jpg" alt="Palle Technologies Certificate" class="certificate-image">
+        </div>
+    </div>
+
+    <div id="technotran-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <img src="Technotran_1.jpg" alt="Technotran Certificate" class="certificate-image">
+        </div>
+    </div>
+
+    <div id="wipro-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <img src="21705A0434_Java_Full-Stack Certification_1.jpg" alt="Wipro Certificate" class="certificate-image">
+        </div>
+    </div>
+
+    <div id="indo-euro-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <img src="Indo_Euro-Sync_1.jpg" alt="Indo-Euro Certificate" class="certificate-image">
+        </div>
+    </div>
+
+    <div id="pvr-tech-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <img src="PVR_Tech_Hub.jpg" alt="PVR Tech Hub Certificate" class="certificate-image">
+        </div>
+    </div>
+
+    <footer>
+        <p class="copyright">© 2024 Sai Preetham Reddy Pennabadi. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const nav = document.querySelector('nav');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            nav.classList.toggle('active');
+        });
+
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                nav.classList.remove('active');
+            });
+        });
+
+        // Certificate modal functionality
+        const modals = {
+            'palle-tech-internship': document.getElementById('palle-tech-modal'),
+            'technotran-internship': document.getElementById('technotran-modal'),
+            'wipro-internship': document.getElementById('wipro-modal'),
+            'indo-euro-internship': document.getElementById('indo-euro-modal'),
+            'pvr-tech-internship': document.getElementById('pvr-tech-modal')
+        };
+
+        // Add click handlers for each internship item
+        Object.keys(modals).forEach(internshipId => {
+            const internship = document.getElementById(internshipId);
+            const modal = modals[internshipId];
+            const closeBtn = modal.querySelector('.close-modal');
+
+            internship.addEventListener('click', () => {
+                modal.style.display = 'flex';
+            });
+
+            closeBtn.addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+
+            window.addEventListener('click', (event) => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+
+        // Close modal on escape key
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                Object.values(modals).forEach(modal => {
+                    modal.style.display = 'none';
+                });
+            }
+        });
+    </script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

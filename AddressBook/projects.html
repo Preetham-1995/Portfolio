@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#4B0082">
+    <title>Projects - Sai Preetham Reddy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-animation"></div>
+    <header>
+        <div class="logo"><a href="./index.html">SAI PREETHAM REDDY PENNABADI</a></div>
+        <div class="hamburger" aria-label="Menu">
+            <span class="line1"></span>
+            <span class="line2"></span>
+            <span class="line3"></span>
+        </div>
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./academics.html">Academics</a></li>
+                <li><a href="./technical-skills.html">Technical Skills</a></li>
+                <li><a href="./internships.html">Internships</a></li>
+                <li><a href="./projects.html" aria-current="page">Projects</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="projects">
+            <div class="projects-container">
+                <div class="projects-content">
+                    <div class="project-item python">
+                        <h3>PDF to DOCX Converter</h3>
+                        <h4>Python Implementation</h4>
+                    </div>
+
+                    <div class="project-item python">
+                        <h3>QR CODE Generator</h3>
+                        <h4>Python-based Solution</h4>
+                    </div>
+
+                    <div class="project-item java">
+                        <h3>Hotel Management System</h3>
+                        <h4>Java Application</h4>
+                    </div>
+
+                    <div class="project-item web">
+                        <h3>OTP VERIFICATION AND EXAM ACCESS SYSTEM</h3>
+                        <h4>Web Application based Authentication System</h4>
+                    </div>
+
+                    <div class="project-item web">
+                        <h3>AI-Powered Portfolio Website</h3>
+                        <h4>Web Application</h4>
+                    </div>
+
+                    <div class="project-item hardware">
+                        <h3>DESIGN OF AN ENERGY-EFFICIENT 8-TAP FIR FILTER</h3>
+                        <h4>22NM DTMOS TECHNOLOGY</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p class="copyright">© 2024 Sai Preetham Reddy Pennabadi. All rights reserved.</p>
+    </footer>
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const nav = document.querySelector('nav');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            nav.classList.toggle('active');
+        });
+
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                nav.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

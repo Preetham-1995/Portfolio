@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#4B0082">
+    <title>Contact - Sai Preetham Reddy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <div class="background-animation">
+        <div class="gradient-mesh"></div>
+        
+        <!-- Floating Orbs -->
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        
+        <!-- Grid Overlay -->
+        <div class="grid-overlay"></div>
+        
+        <!-- Particles Container -->
+        <div class="particles"></div>
+        
+        <!-- Shooting Stars -->
+        <div id="shooting-stars-container"></div>
+    </div>
+    <header>
+        <div class="logo"><a href="./index.html">SAI PREETHAM REDDY PENNABADI</a></div>
+        <div class="hamburger" aria-label="Menu">
+            <span class="line1"></span>
+            <span class="line2"></span>
+            <span class="line3"></span>
+        </div>
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./academics.html">Academics</a></li>
+                <li><a href="./technical-skills.html">Technical Skills</a></li>
+                <li><a href="./internships.html">Internships</a></li>
+                <li><a href="./projects.html">Projects</a></li>
+                <li><a href="./contact.html" aria-current="page">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="contact" class="content-section">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>Let's discuss something cool together</h2>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+916303052364" class="contact-link">+91 6303052364</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:psaipreethamreddy031@gmail.com" class="contact-link">psaipreethamreddy031@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-location-dot"></i>
+                            <span>Bengaluru, India</span>
+                        </div>
+                        <div class="social-links">
+                            <a href="https://github.com/Preetham-1995" target="_blank" class="social-icon">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="http://www.linkedin.com/in/sai-preetham-reddy-pennabadi-614853258" target="_blank" class="social-icon">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="mailto:psaipreethamreddy031@gmail.com" class="social-icon">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Send Me a Message</h3>
+                    <form id="emailForm" method="POST">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" placeholder="Your Mobile Number" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="connect-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p class="copyright">© 2024 Sai Preetham Reddy Pennabadi. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const nav = document.querySelector('nav');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            nav.classList.toggle('active');
+        });
+
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                nav.classList.remove('active');
+            });
+        });
+
+        (function() {
+            emailjs.init({
+                publicKey: 'a8lU56_GHjxh5F4fh',
+            });
+        })();
+
+        document.getElementById('emailForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitButton = this.querySelector('button[type="submit"]');
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
+            
+            const templateParams = {
+                to_name: "Sai Preetham Reddy",
+                from_name: document.getElementById('name').value,
+                from_email: document.getElementById('email').value,
+                user_mob_number: document.getElementById('phone').value,  // Changed from phone_number to user_mob_number
+                message: document.getElementById('message').value,
+                to_email: 'psaipreethamreddy031@gmail.com',
+                reply_to: document.getElementById('email').value
+            };
+            
+            emailjs.send('service_x8fxqa8', 'template_xda87q9', templateParams)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Your message has been sent successfully. I will get back to you soon!',
+                        icon: 'success',
+                        confirmButtonText: 'OK'
+                    });
+                    document.getElementById('emailForm').reset();
+                })
+                .catch(function(error) {
+                    console.error('FAILED...', error);
+                    Swal.fire({
+                        title: 'Oops...',
+                        text: 'Something went wrong! Please try again.',
+                        icon: 'error',
+                        confirmButtonText: 'OK'
+                    });
+                })
+                .finally(function() {
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Send Message';
+                });
+        });
+
+        // Create shooting stars
+        function createShootingStars() {
+            const container = document.getElementById('shooting-stars-container');
+            
+            function createStar() {
+                const star = document.createElement('div');
+                star.className = 'shooting-star';
+                star.style.top = `${Math.random() * 100}%`;
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.animationDelay = `${Math.random() * 5}s`;
+                container.appendChild(star);
+                
+                // Remove star after animation
+                setTimeout(() => {
+                    star.remove();
+                }, 2000);
+            }
+            
+            // Create new stars periodically
+            setInterval(createStar, 1000);
+        }
+
+        // Create interactive particles
+        function createParticles() {
+            const particlesContainer = document.querySelector('.particles');
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.cssText = `
+                    position: absolute;
+                    width: ${Math.random() * 3}px;
+                    height: ${Math.random() * 3}px;
+                    background: rgba(255, 255, 255, ${Math.random() * 0.5 + 0.2});
+                    border-radius: 50%;
+                    top: ${Math.random() * 100}%;
+                    left: ${Math.random() * 100}%;
+                    animation: float ${Math.random() * 10 + 5}s ease-in-out infinite;
+                `;
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Initialize background effects
+        document.addEventListener('DOMContentLoaded', () => {
+            createShootingStars();
+            createParticles();
+        });
+
+        // Add mouse interaction
+        document.addEventListener('mousemove', (e) => {
+            const orbs = document.querySelectorAll('.orb');
+            const mouseX = e.clientX / window.innerWidth;
+            const mouseY = e.clientY / window.innerHeight;
+            
+            orbs.forEach((orb, index) => {
+                const movement = (index + 1) * 20;
+                orb.style.transform = `translate(${mouseX * movement}px, ${mouseY * movement}px)`;
+            });
+        });
+    </script>
+  
+</body>
+</html>
